@@ -14,8 +14,16 @@ jobs:
       - name: checkout
         uses: actions/checkout@v3
 
-      - name: release
-        run: npx semantic-release
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+
+      - name: Install semantic-release
+        run: npm install -g semantic-release
+
+      - name: Release
+        run: semantic-release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
