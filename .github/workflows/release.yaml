@@ -23,7 +23,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Set up Node.js v20.6.1
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
           node-version: '20.6.1'
 
