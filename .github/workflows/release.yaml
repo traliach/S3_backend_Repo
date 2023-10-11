@@ -14,23 +14,15 @@ jobs:
       - name: checkout
         uses: actions/checkout@v3
 
-      - name: Install semantic-release
-        run: sudo npm install -g semantic-release
-
-      - name: Release
-        run: semantic-release
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Set up Node.js v20.6.1
+      - name: Set up Node.js 
         uses: actions/setup-node@v3
         with:
-          node-version: '20.6.1'
+          node-version: '20.6.1'  # Use the specified version
 
       - name: Install semantic-release
         run: npm install -g semantic-release
 
-      - name: Release_fix
+      - name: Release
         run: semantic-release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
