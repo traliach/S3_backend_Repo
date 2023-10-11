@@ -22,10 +22,10 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Set up Node.js
+      - name: Set up Node.js v17
         uses: actions/setup-node@v2
         with:
-          node-version: '14'
+          node-version: '17'
 
       - name: Install semantic-release
         run: npm install -g semantic-release
