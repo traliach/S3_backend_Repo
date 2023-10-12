@@ -14,15 +14,15 @@ jobs:
       - name: checkout
         uses: actions/checkout@v3
 
-      - name: Set up Node.js
+      - name: Set up Node.js v20.6.1
         uses: actions/setup-node@v3
         with:
-          node-version: '20.8.0' # 20.8.0 is the latest version 
+          node-version: '20.6.1'
 
-      - name: Install semantic-release
-        run: npm install semantic-release
+      - name: Install semantic-release globally
+        run: sudo npm install -g semantic-release
 
-      - name: Run semantic-release from local node_modules
-        run: ./node_modules/.bin/semantic-release
+      - name: Release
+        run: semantic-release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
